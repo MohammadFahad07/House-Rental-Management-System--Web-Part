@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Your products</h2>
+                <a class="btn btn-primary" href="{{ url_for('add_product') }}">Add new product</a>
+
+                    {% for product in products %}
+                        <ul>
+                            <li class="py-3">
+                                <h5>{{ product.ProductName }}</h5>
+                                <p><b>$</b>{{ product.Price }}</p>
+                            </li>
+                        </ul>
+                    {% endfor %}
+
+            </div>
+            <div class="col-6">
+
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

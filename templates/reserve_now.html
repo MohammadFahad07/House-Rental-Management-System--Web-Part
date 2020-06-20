@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <h1><i class="fas fa-shopping-bag"> Place the Reserve</i></h1>
+        <p>Fill all the input field</p>
+        <div class="row">
+            <div class="col-6">
+                <h3>Tenant info</h3>
+                <form method="POST" action="{{ url_for('reserve_now', product_id=product.ID)}}">
+                        {{ reserve_form.csrf_token }}
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Tenant name</label>
+                        {{ reserve_form.Name(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Tenant Address</label>
+                        {{ reserve_form.Address(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Tenant Phone</label>
+                        {{ reserve_form.Phone(class='form-control') }}
+                    </div>
+                    {{ reserve_form.Submit(class='btn btn-primary') }}
+                </form>
+            </div>
+            <div class="col-6">
+                <h3>{{ product.ProductName }}</h3>
+                <h6>Price: {{ product.Price }}</h6>
+                <p class="small col-5">{{ product.ProductDescription }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

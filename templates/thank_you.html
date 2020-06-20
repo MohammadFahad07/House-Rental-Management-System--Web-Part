@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-12">
+                <h1>Thank You !!</h1>
+                <p>Your reserve message is successfully placed to landord.</p>
+
+                <a class="btn btn-primary" href="{{ url_for('events') }}">Browse other flat</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

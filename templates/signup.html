@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+<section class="my-5">
+    <div class="container py-5">
+        <div class="row my-5">
+            <div class="col-6">
+                <h1><i class="fas fa-address-card"></i></h1>
+                <h2>Register yourself to the community</h2>
+                <p>We will provide you statistics and all the associated informations</p>
+                <p>The base .nav component is built with flexbox and provide a strong foundation for building all types of navigation components. It includes some style overrides (for working with lists), some link padding for larger hit areas, and basic disabled styling.</p>
+
+                <a href="#">Why phone number?</a>
+                <p class="small">If you wonder why do you need to provide phone number</p>
+                <a href="#">Why email address?</a>
+                <p class="small">If you wonder why do you need to provide email address</p>
+                <a href="#">Terms & conditions</a>
+                <p class="small">Learn more about terms & conditions</p>
+
+            </div>
+            <div class="col-6 border shadow p-5">
+                <form method="POST" action="{{url_for('register')}}">
+                    {{ signup_form.csrf_token }}
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    {{signup_form.FullName(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    {{signup_form.PhoneNumber(class="form-control")}}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">UserType</label>
+                    {{signup_form.UserType(class="form-control")}}
+                  </div>
+
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    {{signup_form.EmailAddress(class="form-control")}}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    {{signup_form.Password(class="form-control")}}
+                  </div>
+
+                    {{signup_form.Submit(class="btn btn-primary")}}
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

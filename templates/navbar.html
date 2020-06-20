@@ -1,0 +1,41 @@
+<section class="">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="{{url_for('home')}}">
+          <!-- <img class="logo" height="35px" src="{{url_for('static',filename='images/logo_gray.png')}}"> -->
+          <h1 class="logo"><i class="fas fa-landmark text-danger">  <span class="text-success">H</span></i>R<span class="text-info">M<span class="text-warning">S</span></span></h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{{url_for('home')}}"><i class="fas fa-home"> Home</i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{{url_for('events')}}"><i class="fas fa-search-location">Flat item</i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{{url_for('contact')}}"><i class="fas fa-address-book"> Contact</i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{{url_for('about')}}"><i class="fab fa-connectdevelop"> About</i> <span class="sr-only">(current)</span></a>
+            </li>
+
+          </ul>
+          <span class="navbar-right">
+            {% if current_user.is_authenticated %}
+              <a href="{{ url_for('dashboard') }}"><i class="fas fa-user-alt"> {{ current_user.FullName }}</i></a>
+            {% else %}
+              <a class="button_default text-primary" href="{{url_for('login')}}"><i class="fas fa-unlock-alt"> Login</i></a>
+              <a class="button_default text-primary" href="{{url_for('register')}}"><i class="fas fa-user-plus"> Register</i></a>
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </nav>
+
+</section>
+

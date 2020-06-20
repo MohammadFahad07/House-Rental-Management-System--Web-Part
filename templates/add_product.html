@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Add new Flat</h1>
+                <p>Fill the form below to create a new flat</p>
+
+                <form method="POST" action="{{ url_for('add_product')}}">
+                        {{ product_form.csrf_token }}
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Flat Title</label>
+                        {{ product_form.ProductName(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Flat address</label>
+                        {{ product_form.ProductDescription(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Flat Price</label>
+                        {{ product_form.Price(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Rent Area</label>
+                        {{ product_form.Category(class='form-control') }}
+                    </div>
+                    {{ product_form.Submit(class='btn btn-primary') }}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-3 p-5">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/product-placeholder.jpg') }}">
+                <h5>{{ product.ProductName }}</h5>
+                <p class="small">{{ product.ProductDescription }}</p>
+                <a class="btn btn-primary" href="{{ url_for('reserve_now',product_id=product.ID) }}">Reserve now</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

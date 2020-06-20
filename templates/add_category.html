@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+                <h1>Add new category</h1>
+                <p>Fill the form below to create a new product</p>
+
+                <form method="POST" action="{{ url_for('add_category')}}">
+                        {{ category_form.csrf_token }}
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Category name</label>
+                        {{ category_form.Name(class='form-control') }}
+                    </div>
+                    {{ category_form.Submit(class='btn btn-primary') }}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+.deepgray_bg{
+    background-color: #efefef;
+}
+.logo{
+    font-family: 'Saira Stencil One', cursive;
+}
+
+
+.font_baloo{
+    font-family: 'Baloo Chettan', cursive;
+}
+
+.font_poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.button_default{
+    padding: 10px 30px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 40px;
+}
+
+.button_default:hover{
+    background: #666;
+    color: #fff;
+}
+
+.text_gray{
+    color: #666;
+}
+
+.gift_button{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 40px;
+    letter-spacing: 1px;
+}
+
+.open_sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.paragraph{
+    font-weight: 40px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+}
+
+.font_megrim{
+    font-family: 'Megrim', cursive;
+}
+
